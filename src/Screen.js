@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { UserContext } from "./context";
-import Header from "./Header";
+import { useSetLang, useT } from "./context";
+
 export default function Screen() {
-  const { logUserIn } = useContext(UserContext);
+  const setLang = useSetLang();
+  const t = useT();
   return (
-    <div>
-      <Header />
-      <h1>First Screen</h1>
-      <button onClick={logUserIn}>Log user in</button>
-    </div>
+    <>
+      <h1>{t("Hello!")}</h1>
+      <button onClick={() => setLang("es")}>Translate</button>
+    </>
   );
 }

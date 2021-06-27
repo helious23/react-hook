@@ -1,10 +1,12 @@
-import UserContextProvider from "./context";
+import Lang from "./context";
 import Screen from "./Screen";
+import translations from "./translations";
+
 function App() {
   return (
-    <UserContextProvider>
-      <Screen />
-    </UserContextProvider>
+    <Lang defaultLang="en" translations={translations}>
+      <Screen></Screen>
+    </Lang>
   );
 }
 
