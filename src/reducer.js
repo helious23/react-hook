@@ -1,16 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
+import { ADD, COMPLETE, DEL, UNCOMPLETE } from "./actions";
 // initialState 설정
 export const initialState = {
   toDos: [],
   completed: [],
 };
-
-// reducer 의 switch 에서 사용할 변수 설정
-// dispatch 에서도 사용
-export const ADD = "add";
-export const DEL = "del";
-export const COMPLETE = "complete";
-export const UNCOMPLETE = "uncomplete";
 
 const reducer = (state, action) => {
   switch (action.type) {
